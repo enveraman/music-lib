@@ -3,3 +3,6 @@ data/*
 
 # Node modules
 node_modules/
+
+# Python cache files
+src/__pycache__
