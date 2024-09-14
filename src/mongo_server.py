@@ -1,19 +1,17 @@
-import pymongo
-
+import pymongo, pymongo.database
 from time import sleep
 
-import pymongo.database
-
-DEFAULT_PORT = 27017
+DEFAULT_HOST = '127.0.0.1'
+DEFAULT_PORT = '27017'
 DEFAULT_DB_NAME = "music-lib"
 
 class MongoDBServer:
     def __init__(self, port:int = DEFAULT_PORT, db_name:str = DEFAULT_DB_NAME) -> None:
-        self.port = port
+        self.port = str(port)
         self.db_name = db_name
         self.running = False
 
-    def start_server(self) -> pymongo.Database:
+    def start_server(self) -> pymongo.database.Database:
         '''
         Starts a localhost MongoDB server with database name ``self.db_name``, returns Database created
         - Access server using 'mongodb://localhost:{port}'.
