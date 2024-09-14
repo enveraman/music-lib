@@ -1,5 +1,5 @@
 # Music files
-data/
+data/*
 
 # Node modules
 node_modules/
